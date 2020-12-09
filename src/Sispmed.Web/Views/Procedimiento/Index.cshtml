@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Sispmed.Core.Domain.Procedimientos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodProc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomProc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreProc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodProc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomProc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreProc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

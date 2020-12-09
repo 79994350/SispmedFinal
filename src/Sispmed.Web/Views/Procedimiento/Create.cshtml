@@ -1,0 +1,48 @@
+﻿@model Sispmed.Core.Domain.Procedimientos
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Procedimientos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CodProc" class="control-label"></label>
+                <input asp-for="CodProc" class="form-control" />
+                <span asp-validation-for="CodProc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomProc" class="control-label"></label>
+                <input asp-for="NomProc" class="form-control" />
+                <span asp-validation-for="NomProc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PreProc" class="control-label"></label>
+                <input asp-for="PreProc" class="form-control" />
+                <span asp-validation-for="PreProc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label"></label>
+                <input asp-for="Valor" class="form-control" />
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
