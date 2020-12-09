@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Sispmed.Core.Domain.Acompanantes>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MailAcom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NIdAcom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PApe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParPac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PNom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SApe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SNom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelAcom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailAcom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NIdAcom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PApe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParPac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PNom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SApe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SNom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelAcom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paciente.CiuRes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoId.NomTipo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
