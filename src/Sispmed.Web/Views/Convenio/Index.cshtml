@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Sispmed.Core.Domain.Convenios>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CosConv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DurConv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FecAper)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomConv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObjConv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resolu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eps)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CosConv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DurConv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FecAper)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomConv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObjConv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resolu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eps.NomEps)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

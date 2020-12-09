@@ -1,0 +1,69 @@
+﻿@model Sispmed.Core.Domain.Convenios
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Convenios</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CosConv" class="control-label"></label>
+                <input asp-for="CosConv" class="form-control" />
+                <span asp-validation-for="CosConv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DurConv" class="control-label"></label>
+                <input asp-for="DurConv" class="form-control" />
+                <span asp-validation-for="DurConv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FecAper" class="control-label"></label>
+                <input asp-for="FecAper" class="form-control" />
+                <span asp-validation-for="FecAper" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomConv" class="control-label"></label>
+                <input asp-for="NomConv" class="form-control" />
+                <span asp-validation-for="NomConv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ObjConv" class="control-label"></label>
+                <input asp-for="ObjConv" class="form-control" />
+                <span asp-validation-for="ObjConv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resolu" class="control-label"></label>
+                <input asp-for="Resolu" class="form-control" />
+                <span asp-validation-for="Resolu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EpsId" class="control-label"></label>
+                <select asp-for="EpsId" class="form-control" asp-items="ViewBag.EpsId"></select>
+                <span asp-validation-for="EpsId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
