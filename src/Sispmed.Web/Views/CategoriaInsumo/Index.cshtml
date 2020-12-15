@@ -1,22 +1,21 @@
 ﻿@model IEnumerable<Sispmed.Core.Domain.CategoriasInsumos>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Categorias";
+    Layout = "~/Views/Shared/_DashBoard.cshtml";
 }
 
-<h1>Index</h1>
-
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Agregar</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.NomCate)
+                Nombre de categoria
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TipoCate)
+                Acciones
             </th>
             <th></th>
         </tr>
@@ -28,12 +27,8 @@
                 @Html.DisplayFor(modelItem => item.NomCate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoCate)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a class="editar" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a class="eliminar" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
             </td>
         </tr>
 }

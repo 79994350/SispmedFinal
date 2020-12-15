@@ -1,36 +1,29 @@
 ﻿@model IEnumerable<Sispmed.Core.Domain.Users>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Usuarios";
+    Layout = "~/Views/Shared/_DashBoard.cshtml";
 }
 
-<h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Agregar</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Primer Nombre
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                Empleado
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Password)
+                Rol
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RememberToken)
+                Acciones
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Empleado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rol)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -40,24 +33,15 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RememberToken)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Empleado.Id)
+                @Html.DisplayFor(modelItem => item.Empleado.PNom)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Rol.NomRol)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a class="editar" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a class="eliminar" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
             </td>
         </tr>
 }

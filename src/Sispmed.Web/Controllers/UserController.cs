@@ -49,7 +49,7 @@ namespace Sispmed.Web.Controllers
         // GET: User/Create
         public IActionResult Create()
         {
-            ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "Id", "Id");
+            ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "Id", "PNom");
             ViewData["RolId"] = new SelectList(_context.Roles, "Id", "NomRol");
             return View();
         }
@@ -85,7 +85,7 @@ namespace Sispmed.Web.Controllers
             {
                 return NotFound();
             }
-            ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "Id", "Id", users.EmpleadoId);
+            ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "Id", "PNom", users.EmpleadoId);
             ViewData["RolId"] = new SelectList(_context.Roles, "Id", "NomRol", users.RolId);
             return View(users);
         }

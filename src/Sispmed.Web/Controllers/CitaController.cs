@@ -52,7 +52,7 @@ namespace Sispmed.Web.Controllers
         public IActionResult Create()
         {
             ViewData["AcompananteId"] = new SelectList(_context.Acompanantes, "Id", "MailAcom");
-            ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "Id", "Id");
+            ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "Id", "PNom");
             ViewData["PacienteId"] = new SelectList(_context.Pacientes, "Id", "CiuRes");
             ViewData["SedeId"] = new SelectList(_context.Sedes, "Id", "DirSede");
             return View();
@@ -72,7 +72,7 @@ namespace Sispmed.Web.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AcompananteId"] = new SelectList(_context.Acompanantes, "Id", "MailAcom", citas.AcompananteId);
-            ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "Id", "Id", citas.EmpleadoId);
+            ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "Id", "PNom", citas.EmpleadoId);
             ViewData["PacienteId"] = new SelectList(_context.Pacientes, "Id", "CiuRes", citas.PacienteId);
             ViewData["SedeId"] = new SelectList(_context.Sedes, "Id", "DirSede", citas.SedeId);
             return View(citas);

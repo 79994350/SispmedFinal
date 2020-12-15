@@ -1,109 +1,43 @@
 ﻿@model IEnumerable<Sispmed.Core.Domain.Pacientes>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Pacientes";
+    Layout = "~/Views/Shared/_DashBoard.cshtml";
 }
 
-<h1>Index</h1>
-
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Agregar</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CiuRes)
+                Nombre
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DirRes)
+                Apellido
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ECivil)
+                Telefono
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MailPac)
+                Eps
             </th>
+
             <th>
-                @Html.DisplayNameFor(model => model.FecNac)
+                Email
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NIdPac)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PApe)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PNom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Regimen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rh)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SApe)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SNom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TelPac)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Eps)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TipoId)
-            </th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CiuRes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DirRes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ECivil)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MailPac)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FecNac)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NIdPac)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PApe)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.PNom)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Regimen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SApe)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SNom)
+                @Html.DisplayFor(modelItem => item.PApe)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TelPac)
@@ -112,12 +46,12 @@
                 @Html.DisplayFor(modelItem => item.Eps.NomEps)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoId.NomTipo)
+                @Html.DisplayFor(modelItem => item.MailPac)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a class="editar" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a class="eliminar" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
             </td>
         </tr>
 }

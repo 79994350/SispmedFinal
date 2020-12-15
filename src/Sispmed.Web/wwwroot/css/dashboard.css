@@ -1,0 +1,394 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+}
+
+.sidebar {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: rgb(70, 130, 180);
+    transition: all .5s ease;
+    border-right: 1px solid rgba(255,255,255,.1);
+}
+
+    .sidebar header {
+        font-size: 25px;
+        color: white;
+        text-align: center;
+        line-height: 70px;
+        background: #B0E0E6;
+        user-select: none;
+        font-weight: bold;
+        text-shadow: 0 0 3px #fff;
+    }
+
+         header .logo{
+            width:100%;
+            height: 80%;
+            margin-top: 15px;
+        }
+
+        .sidebar ul a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 87px;
+            font-size: 20px;
+            color: white;
+            padding-left: 40px;
+            box-sizing: border-box;
+            border-top: 1px solid rgba(255,255,255,.1);
+            border-bottom: 1px solid black;
+            transition: .5s;
+        }
+
+ul li:hover a {
+    padding-left: 50px;
+    background: rgba(255,255,255,0.2);
+    text-shadow: 0 0 5px #fff;
+}
+
+.sidebar ul a i {
+    margin-right: 16px;
+}
+
+
+#check {
+    display: none;
+}
+
+label #btn, label #cancel {
+    position: absolute;
+    cursor: pointer;
+}
+
+label #btn {
+    left: 40px;
+    top: 15px;
+    font-size: 20px;
+    color: white;
+    padding: 2px 6px;
+    transition: all .5s;
+}
+
+label #cancel {
+    z-index: 1111;
+    left: -195px;
+    top: 25px;
+    font-size: 20px;
+    color: white;
+    padding: 2px 6px;
+    transition: all .5s ease;
+}
+
+#check:checked ~ .sidebar {
+    left: 0;
+}
+
+#check:checked ~ label #btn {
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel {
+    left: 205px;
+}
+
+#check:checked ~ section {
+    margin-left: 250px;
+    transition: all .5s;
+}
+
+section {
+    height: 100vh;
+    transition: all .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../img/dashboard.PNG);
+}
+
+.fondo{
+    height: 100vh;
+    transition: all .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/hospital.jpg);
+}
+
+    .fondo .sombra{
+        background:rgba(0,0,0, 0.5);
+        width:100%;
+        height: 100%;
+    }
+
+    .cerrar-sesion {
+        color: white;
+        position: fixed;
+        right: 5px;
+        top: 5px;
+    }
+
+.sidebar .menu a {
+    width: 100%;
+}
+
+.sidebar .cerrar {
+    color: white;
+}
+
+footer {
+    width: 100%;
+    background: rgb(70, 130, 180);
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+/*  Este es el titulo */
+
+.caja-titulo {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .caja-titulo h1 {
+        text-shadow: 0 0 3px #fff;
+        text-align: center;
+        color: white;
+        font-size: 2em;
+    }
+
+.interfaz-modulos {
+    width: 100%;
+    height: 90%;
+    padding: 10px 10px 40px 10px;
+}
+
+    .interfaz-modulos .noti-empresa {
+        width: 59.5%;
+        height: 100%;
+        float: left;
+    }
+
+        .interfaz-modulos .noti-empresa .noticias {
+            width: 100%;
+            height: 70%;
+            overflow: hidden;
+            border: 1px solid white;
+        }
+
+.noticias ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: cambio 20s infinite alternate ease-in;
+}
+
+.noticias li {
+    width: 100%;
+    list-style: none;
+}
+
+.noticias img {
+    width: 100%;
+    height: 100%;
+}
+
+section a {
+    padding: 1px;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #FFF8DC;
+}
+
+    section a:hover {
+        background: #00FFFF;
+        transition: .8s;
+    }
+
+.fondo .table {
+    width: 99%;
+    color: white;
+    margin: auto;
+    background: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid white;
+}
+    section .table tr {
+        font-size: 30px;
+        text-align: justify;
+    }
+
+    section .table td {
+        font-size: 20px;
+    }
+
+    section .table .editar{
+        padding: 1px;
+        border: 1px solid white;
+        border-radius: 10px;
+    }
+
+    section .table .editar:hover {
+        background: #7CFC00;
+        transition: .8s;
+    }
+    section .table .eliminar{
+        padding: 1px;
+        border: 1px solid white;
+        border-radius: 10px;
+    }
+
+    section .table .eliminar:hover {
+        background: #800000;
+        transition: .8s;
+    }
+
+
+    @keyframes cambio {
+        0% {
+        margin-left: 0;
+    }
+
+    20% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+}
+
+.interfaz-modulos .empresa {
+    width: 100%;
+    height: 29%;
+    border: 1px solid white;
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+    .interfaz-modulos .empresa h1 {
+        color: white;
+        text-align: justify;
+        font-size: 2em;
+    }
+
+.interfaz-modulos .recono {
+    width: 40%;
+    height: 100%;
+    float: right;
+}
+
+    .interfaz-modulos .recono .logros {
+        width: 100%;
+        height: 70%;
+        border: 1px solid white;
+    }
+
+        .interfaz-modulos .recono .logros h1 {
+            font-size: 1.3em;
+            text-align: center;
+            color: white;
+            margin-top: 10px
+        }
+
+.etiqueta {
+    display: flex;
+    font-size: 15px;
+    color: white;
+    padding: 15px;
+    margin-top: 13px;
+    align-items: center;
+    justify-content: center;
+}
+
+.interfaz-modulos .recono .cumple {
+    width: 100%;
+    height: 29%;
+    margin-top: 1.4%;
+    border: 1px solid white;
+    padding: 15px 5px;
+}
+
+    .interfaz-modulos .recono .cumple h1, p {
+        color: white;
+        text-align: center;
+        padding: 5px 0px;
+    }
+
+    .interfaz-modulos .recono .cumple h1 {
+        font-size: 22px;
+    }
+
+    .interfaz-modulos .recono .cumple p {
+        font-size: 13px;
+    }
+
+
+@media (max-width:767px) {
+    section {
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .interfaz-modulos .empresa {
+        width: 100%;
+        height: 100%;
+    }
+
+    .interfaz-modulos .recono .cumple {
+        margin-bottom: 40px;
+    }
+
+    footer h2 {
+        font-size: 20px;
+    }
+}
